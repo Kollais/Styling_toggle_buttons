@@ -1,0 +1,343 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ToggleButtons">
+
+
+    <Style x:Key="SquareInnerCircleSwitch" TargetType="ToggleButton">
+        <Setter Property="Control.OverridesDefaultStyle" Value="True"/>
+        <Setter Property="RenderTransformOrigin" Value="1, 1"/>
+        <!--<Setter Property="IsThreeState" Value="True"/>-->
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    
+                    <Border  BorderThickness="2.5" CornerRadius="20" Width="200" Height="200">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#eeeeee" Offset="0"/>
+                                <GradientStop Color="#a9a9a9" Offset="0.5"/>
+                                <GradientStop Color="#565353" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#ffffff" Offset="0"/>
+                                <GradientStop Color="#f0f0f0" Offset="0.25"/>
+                                <GradientStop Color="#dddddd" Offset="0.5"/>
+                                <GradientStop Color="DimGray" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border CornerRadius="20" Margin="10">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#f0f0f0" Offset="0"/>
+                                    <GradientStop Color="#eeeeee" Offset="0.25"/>
+                                    <GradientStop Color="#cecece" Offset="0.5"/>
+                                    <GradientStop Color="#cecece" Offset="0.75"/>
+                                    <GradientStop Color="#969696" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="OFF" Margin="10" FontSize="20" FontFamily="Impact" Foreground="#7c7c7c" Grid.Column="0" Grid.Row="0"/>
+                                <Label Content="ON" Margin="10" FontSize="20" FontFamily="Impact" Foreground="#7c7c7c" Grid.Column="2" Grid.Row="0"/>
+                                <DockPanel Grid.Column="0" Grid.Row="0" LastChildFill="True" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                                    <Border Height="122" x:Name="circularBorder" BorderThickness="1"
+                                            CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder}"
+                                            Width="{Binding Path=ActualHeight, ElementName=circularBorder}">
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="#cecece" Offset="0"/>
+                                                <GradientStop Color="#cecece" Offset="0.7"/>
+                                                <GradientStop Color="#f0f0f0" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                        <Border Height="120" x:Name="circularBorder1" BorderThickness="2.5"
+                                            CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder1}"
+                                            Width="{Binding Path=ActualHeight, ElementName=circularBorder1}">
+                                            <Border.BorderBrush>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="#989898" Offset="0"/>
+                                                    <GradientStop Color="#8d8d8d" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.BorderBrush>
+                                            <Border.Background>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="#ffdefe" Offset="0"/>
+                                                    <GradientStop Color="#eca9db" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                            <Border Height="100" x:Name="circularBorder2" BorderThickness="2"
+                                                CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder2}"
+                                                Width="{Binding Path=ActualHeight, ElementName=circularBorder2}">
+                                                <Border.BorderBrush>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="#f6f6f6" Offset="0"/>
+                                                        <GradientStop Color="#c7c7c7" Offset="0.3"/>
+                                                        <GradientStop Color="#7c7c7c" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.BorderBrush>
+                                                <Border.Background>
+                                                    <LinearGradientBrush>
+                                                        <GradientStop Color="#ffffff" Offset="0"/>
+                                                        <GradientStop Color="#d0d0d0" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <Border.Effect>
+                                                    <DropShadowEffect Color="#c1bdbd" Opacity="0.5" ShadowDepth="30" BlurRadius="10"/>
+                                                </Border.Effect>
+                                                <Border Height="90" x:Name="circularBorder3"
+                                                    CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder3}"
+                                                    Width="{Binding Path=ActualHeight, ElementName=circularBorder3}">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush>
+                                                            <GradientStop Color="#ffffff" Offset="0"/>
+                                                            <GradientStop Color="#e3e3e3" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                    <Canvas x:Name="Canvas1">
+                                                        <Ellipse Width="10" Height="10" Canvas.Top="15" Canvas.Left="15" x:Name="ellipse1">
+                                                            <Ellipse.Fill>
+                                                                <LinearGradientBrush>
+                                                                    <GradientStop Color="#787878" Offset="0"/>
+                                                                    <GradientStop Color="#cecece" Offset="0.4"/>
+                                                                    <GradientStop Color="#e5e5e5" Offset="1"/>
+                                                                </LinearGradientBrush>
+                                                            </Ellipse.Fill>
+                                                        </Ellipse>
+                                                    </Canvas>
+                                                </Border>
+                                            </Border>
+                                        </Border>
+                                    </Border>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Left)"
+                                        From="15" To="60"
+                                        Duration="0:0:0.4"/>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        From="15" To="10"
+                                        Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        From="10" To="15"
+                                        Duration="0:0:0.2"
+                                        BeginTime="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            
+                            <Setter TargetName="circularBorder1" Property="Control.Background" >
+                                <Setter.Value>
+                                    <LinearGradientBrush>
+                                        <GradientStop Color="#cffbcb" Offset="0"/>
+                                        <GradientStop Color="#87dd7f" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="false">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Left)"
+                                        From="60" To="15"
+                                        Duration="0:0:0.4"/>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        From="15" To="10"
+                                        Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        From="10" To="15"
+                                        Duration="0:0:0.2"
+                                        BeginTime="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RectangleHorizontalSwitch">
+        <Setter Property="Control.OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Height="70" Width="200" CornerRadius="15" Background="#dbdbdb">
+                        <Border Height="50" Width="180" CornerRadius="5" BorderThickness="2" BorderBrush="#a9a8a8">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#cecece" Offset="0"/>
+                                    <GradientStop Color="#eeeeee" Offset="0.1"/>
+                                    <GradientStop Color="#f2f2f2" Offset="0.5"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="ON" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       FontFamily="Impact" FontSize="25" Foreground="Gray" Panel.ZIndex="0"/>
+                                <Label Content="OFF" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                       FontFamily="Impact" FontSize="25" Foreground="Gray" Panel.ZIndex="0"/>
+                                <Border x:Name="br1" CornerRadius="5" BorderThickness="2" Grid.Column="1" Panel.ZIndex="1" Margin="1" BorderBrush="#6497c5">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#c0e1ff" Offset="0"/>
+                                            <GradientStop Color="#7db2e3" Offset="0.1"/>
+                                            <GradientStop Color="#77b2e7" Offset="0.5"/>
+                                            <GradientStop Color="#5da6ea" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false" >
+                            <Setter Property="Grid.Column" TargetName="br1" Value="0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CircleSwitch">
+        <Setter Property="Control.OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="circBorder" Height="200" BorderThickness="3"
+                        CornerRadius="{Binding Path=ActualHeight, ElementName=circBorder}"
+                        Width="{Binding Path=ActualHeight, ElementName=circBorder}">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#ababab" Offset="0"/>
+                                <GradientStop Color="#7a7a7a" Offset="0.5"/>
+                                <GradientStop Color="#dfdfdf" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#c1c1c1" Offset="0"/>
+                                <GradientStop Color="#a3a3a3" Offset="0.25"/>
+                                <GradientStop Color="#696969" Offset="0.5"/>
+                                <GradientStop Color="#b2b2b2" Offset="0.75"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border x:Name="circBorder1" Height="170" BorderThickness="2.5"
+                        CornerRadius="{Binding Path=ActualHeight, ElementName=circBorder1}"
+                        Width="{Binding Path=ActualHeight, ElementName=circBorder1}"
+                                Background="#606263">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#e3e3e3" Offset="0"/>
+                                    <GradientStop Color="#c1c1c1" Offset="0.25"/>
+                                    <GradientStop Color="#a3a3a3" Offset="0.5"/>
+                                    <GradientStop Color="#c1c1c1" Offset="0.75"/>
+                                    <GradientStop Color="#e3e3e3" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <Border x:Name="circBorder2" Height="165" 
+                                    CornerRadius="{Binding Path=ActualHeight, ElementName=circBorder2}"
+                                    Width="{Binding Path=ActualHeight, ElementName=circBorder2}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#58ae37" Offset="0"/>
+                                        <GradientStop Color="#56b431" Offset="0.25"/>
+                                        <GradientStop Color="#74ce50" Offset="0.5"/>
+                                        <GradientStop Color="#9fdb87" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border x:Name="circBorder3" Height="155"
+                                    CornerRadius="{Binding Path=ActualHeight, ElementName=circBorder3}"
+                                    Width="{Binding Path=ActualHeight, ElementName=circBorder3}">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#61ba3e" Offset="0"/>
+                                            <GradientStop Color="#70c94d" Offset="0.5"/>
+                                            <GradientStop Color="#9fdb87" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Canvas>
+                                        <Ellipse x:Name="ell" Fill="#9dcc8b" Width="90" Height="70" Canvas.Left="33" Panel.ZIndex="1"/>
+                                        <Viewbox Canvas.Top="23" Canvas.Left="25" Panel.ZIndex="2" Width="100" Height="100">
+                                            <Path x:Name="off" Fill="#599f3e" Data="M10.5,1.674V4c1.215,0.912,2,2.364,2,4c0,2.762-2.238,5-5,5s-5-2.238-5-5c0-1.636,0.785-3.088,2-4   V1.674C2.135,2.797,0.5,5.208,0.5,8c0,3.866,3.134,7,7,7s7-3.134,7-7C14.5,5.208,12.865,2.797,10.5,1.674zM8.5,7.003V0.997C8.5,0.446,8.056,0,7.5,0c-0.553,0-1,0.453-1,0.997v6.006C6.5,7.554,6.944,8,7.5,8   C8.053,8,8.5,7.547,8.5,7.003z"/>
+                                        </Viewbox>
+                                        <Viewbox Canvas.Top="25" Canvas.Left="25" Panel.ZIndex="3" Width="100" Height="100">
+                                            <Path Fill="White" Data="M10.5,1.674V4c1.215,0.912,2,2.364,2,4c0,2.762-2.238,5-5,5s-5-2.238-5-5c0-1.636,0.785-3.088,2-4   V1.674C2.135,2.797,0.5,5.208,0.5,8c0,3.866,3.134,7,7,7s7-3.134,7-7C14.5,5.208,12.865,2.797,10.5,1.674zM8.5,7.003V0.997C8.5,0.446,8.056,0,7.5,0c-0.553,0-1,0.453-1,0.997v6.006C6.5,7.554,6.944,8,7.5,8   C8.053,8,8.5,7.547,8.5,7.003z"/>
+                                        </Viewbox>
+                                    </Canvas>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="circBorder2" Property="Control.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#ae3743" Offset="0"/>
+                                        <GradientStop Color="#b43131" Offset="0.25"/>
+                                        <GradientStop Color="#ce5050" Offset="0.5"/>
+                                        <GradientStop Color="#db8787" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="circBorder3" Property="Control.Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#ba3e3e" Offset="0"/>
+                                        <GradientStop Color="#c94d4d" Offset="0.5"/>
+                                        <GradientStop Color="#db8787" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="ell" Property="Fill" Value="#cc8b8b"/>
+                            <Setter TargetName="off" Property="Fill" Value="#9f3e3e"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
