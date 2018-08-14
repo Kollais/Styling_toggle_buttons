@@ -6,7 +6,6 @@
     <Style x:Key="SquareInnerCircleSwitch" TargetType="ToggleButton">
         <Setter Property="Control.OverridesDefaultStyle" Value="True"/>
         <Setter Property="RenderTransformOrigin" Value="1, 1"/>
-        <!--<Setter Property="IsThreeState" Value="True"/>-->
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -125,31 +124,55 @@
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        
+
                         <Trigger Property="IsChecked" Value="True">
+                            
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
                                         Storyboard.TargetName="ellipse1"
                                         Storyboard.TargetProperty="(Canvas.Left)"
-                                        From="15" To="60"
+                                        To="60"
                                         Duration="0:0:0.4"/>
                                         <DoubleAnimation 
                                         Storyboard.TargetName="ellipse1"
                                         Storyboard.TargetProperty="(Canvas.Top)"
-                                        From="15" To="10"
+                                        To="10"
                                         Duration="0:0:0.2"/>
                                         <DoubleAnimation
                                         Storyboard.TargetName="ellipse1"
                                         Storyboard.TargetProperty="(Canvas.Top)"
-                                        From="10" To="15"
+                                        To="15"
                                         Duration="0:0:0.2"
                                         BeginTime="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
-                            
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Left)"
+                                        To="15"
+                                        Duration="0:0:0.4"/>
+                                        <DoubleAnimation 
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        To="10"
+                                        Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="ellipse1"
+                                        Storyboard.TargetProperty="(Canvas.Top)"
+                                        To="15"
+                                        Duration="0:0:0.2"
+                                        BeginTime="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+
                             <Setter TargetName="circularBorder1" Property="Control.Background" >
                                 <Setter.Value>
                                     <LinearGradientBrush>
@@ -160,32 +183,7 @@
                             </Setter>
 
                         </Trigger>
-
-                        <Trigger Property="IsChecked" Value="false">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation 
-                                        Storyboard.TargetName="ellipse1"
-                                        Storyboard.TargetProperty="(Canvas.Left)"
-                                        From="60" To="15"
-                                        Duration="0:0:0.4"/>
-                                        <DoubleAnimation 
-                                        Storyboard.TargetName="ellipse1"
-                                        Storyboard.TargetProperty="(Canvas.Top)"
-                                        From="15" To="10"
-                                        Duration="0:0:0.2"/>
-                                        <DoubleAnimation
-                                        Storyboard.TargetName="ellipse1"
-                                        Storyboard.TargetProperty="(Canvas.Top)"
-                                        From="10" To="15"
-                                        Duration="0:0:0.2"
-                                        BeginTime="0:0:0.2"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>
-
+                        
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
